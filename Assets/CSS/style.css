@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=IBM+Plex+Serif:ital,wght@1,300&family=Kadwa&family=Noto+Rashi+Hebrew:wght@300&display=swap');
+body{
+    font-family: 'Kadwa', serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    display: flex;
+    font-size: small;
+
+    height: 60px;
+
+    
+}
+.source{
+    background: linear-gradient(270deg, #5a87f9cb 6.76%, rgba(221, 62, 120, 0.489) 95.24%);
+    border-radius: 60px 0px 40px;
+
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    left: -50px;
+    padding-left: 100px;
+
+    width: 30vw;
+    height: 60px;
+
+    transition: 0.5s;
+    
+}
+.source:hover{
+
+}
+main{
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+    min-height: 400px;
+}
+.title{
+    font-size: 1.2rem;
+    padding-left: 20vw;
+    height: 90px;
+    
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button{
+    background: #D9D9D9;
+    border-radius: 12px;
+    border: none;
+
+    width: 600px;
+    height: 50px;
+    margin: 10px;
+
+    font-family: 'Kadwa', serif;
+    font-size: medium;
+}
+button:hover{
+    background: #c3c1c1;
+    transform: scale(105%);
+
+}
+footer{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
