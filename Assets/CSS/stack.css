@@ -41,7 +41,7 @@ section{
     padding: 30px;
 }
 .stackDisplay{
-    background: #dad8d8;
+    background-color: #dad8d8;
     width: 80vh ;
     min-height: 80vh;
     border-radius: 12px;

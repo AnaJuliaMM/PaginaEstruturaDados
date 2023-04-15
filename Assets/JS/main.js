@@ -3,23 +3,19 @@ class Stack{
         this.enterNode= null;
     }
     push(data){
-        //Exibir no html
-        let stackDisplay = document.getElementById("stackDisplay");
-        stackDisplay.style.backgroundColor = "red";
-        
-        let exampleP = document.createElement("p");
+        let stackDisplay = document.getElementById("stackDisplay"); 
+        let exampleP = document.createElement("p"); //Criar um elemento paragrafo
 
         //Adiciona novo nó
         let newNode = {data: data, next: null};
-
         let auxNode = {data: data, next: null};
         auxNode = this.enterNode;
-
         this.enterNode = newNode;
         this.enterNode.next = auxNode;
 
-        exampleP.innerText(this.enterNode);
+        exampleP.innerText = this.enterNode;
         stackDisplay.appendChild(exampleP);
+        
 
         return this.enterNode;
     }
