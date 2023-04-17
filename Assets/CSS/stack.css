@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&family=IBM+Plex+Serif:ital,wght@1,300&family=Kadwa&family=Noto+Rashi+Hebrew:wght@300&display=swap');
+*{
+    margin: 0;
+}
 body{
     font-family: 'Kadwa', serif;
     margin: 0;
@@ -41,12 +44,18 @@ section{
     padding: 30px;
 }
 .stackDisplay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     background-color: #dad8d8;
+    font-size: medium;
+
     width: 80vh ;
     min-height: 80vh;
     border-radius: 12px;
+    padding: 15px;
 }
-
 button{
     background: #D9D9D9;
     border-radius: 12px;
@@ -63,4 +72,31 @@ button:hover{
     background: #c3c1c1;
     transform: scale(105%);
 
+}
+.inputAdd{
+    display: none;
+    align-items: center;
+    gap: 5px;
+    height: 40px;
+}
+.inputAdd button{
+    width: 100px;
+    height: 30px;
+
+    background: linear-gradient(270deg, #5a87f9cb 6.76%, rgba(221, 62, 120, 0.489) 95.24%);
+    font-size: small;
+}
+.inputAdd input{
+height: 30px;
+border: none;
+border-bottom: thin solid black;
+
+}
+.nodeContent{
+    background-color: rgb(223, 151, 201);
+    padding: 5px;
+    border-radius: 12px;
+    margin: 10px;
+    min-width: 100px;
+    text-align: center;
 }

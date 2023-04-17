@@ -18,8 +18,13 @@
         </section>
         <section>
             <h3>Manipule a Pilha:</h3>
-            <button class="newObject" id="push" onclick="myStack.push()">Adicionar</button>
-            <button class="newObject">Exibir Topo</button>
+            <button class="newObject" id="push">Adicionar</button>
+            <div class="inputAdd">
+                <label for="payload">Conteúdo:</label>
+                <input type="text" name="payload" id="payload">
+                <button type="submit" id="payloadBtn">Adicionar</button>
+            </div>
+            <button class="newObject" id="top">Exibir Topo</button>
             <button class="newObject">Remover o topo</button>
             <button class="newObject" id="displayAll">Exibir</button>
 

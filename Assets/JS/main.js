@@ -1,27 +1,41 @@
 class Stack{
     constructor(){
         this.enterNode= null;
+        this.stackDisplay = document.getElementById("stackDisplay"); 
+
     }
-    push(data){
-        let stackDisplay = document.getElementById("stackDisplay"); 
-        let exampleP = document.createElement("p"); //Criar um elemento paragrafo
+    pushPayloadInput(){
+        //Revelar formulario
+        let inputDiv = document.getElementsByClassName("inputAdd")[0];
+        inputDiv.style.display = "flex";
+    }
+    push(){
+        //Entrada do usuário
+        let input = document.getElementById("payload").value;
+
+        //Criar um elemento para mostrar o nó
+        let nodeFront = document.createElement("p"); 
+        nodeFront.setAttribute("class", "nodeContent");
 
         //Adiciona novo nó
-        let newNode = {data: data, next: null};
-        let auxNode = {data: data, next: null};
+        let newNode = {data: input, next: null};
+        let auxNode = {data: null, next: null};
         auxNode = this.enterNode;
         this.enterNode = newNode;
         this.enterNode.next = auxNode;
 
-        exampleP.innerText = this.enterNode;
-        stackDisplay.appendChild(exampleP);
+        //Mostrar na tela
+        nodeFront.innerText = this.enterNode.data;
+        stackDisplay.appendChild(nodeFront);
         
-
         return this.enterNode;
     }
+    closeAddInput(){
+        let inputDiv = document.getElementsByClassName("inputAdd")[0];
+        inputDiv.style.display = "none";
+    }
     pop(){
-        
-        //Retira o no de cima
+        //Método Pop()=Retira o no de cima
         if(!this.isEmpty()){
             let nodePopped = this.enterNode;
             this.enterNode = this.enterNode.next;
@@ -32,7 +46,17 @@ class Stack{
         }
     }
     top(){
-        //Mostra o no do topo
+        //Método Top = mostra o nó do topo
+
+        //Fechar input do bt adicionar
+        this.closeAddInput();
+        //Criar elemento parágrafo para o nó
+        let nodeFront = document.createElement("p"); 
+        nodeFront.setAttribute("class", "nodeContent");
+        //Adicionar valor
+        nodeFront.innerText = this.enterNode.data;
+        stackDisplay.appendChild(nodeFront);
+
         return this.enterNode;
     }
     isEmpty(){
@@ -54,15 +78,20 @@ class Stack{
         }
         return returnString;
     }
+    
 }
 
-
-
-//Instancia objetos
+//Instancia objeto
 let myStack = new Stack();
 
-let btnDisplayAllStack = document.getElementById("push");
-btnDisplayAllStack.addEventListener("click", myStack.push);
+let btnAdicionar = document.getElementById("push");
+btnAdicionar.addEventListener("click", myStack.pushPayloadInput);
+
+let payloadBtn = document.getElementById("payloadBtn");
+payloadBtn.addEventListener("click", myStack.push);
+
+let btnTop = document.getElementById("top");
+btnTop.addEventListener("click", myStack.top);
 
 
 
