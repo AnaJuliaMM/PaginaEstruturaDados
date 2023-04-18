@@ -30,10 +30,6 @@ class Stack{
         
         return this.enterNode;
     }
-    closeAddInput(){
-        let inputDiv = document.getElementsByClassName("inputAdd")[0];
-        inputDiv.style.display = "none";
-    }
     pop(){
         //Método Pop()=Retira o no de cima
         if(!this.isEmpty()){
@@ -49,12 +45,14 @@ class Stack{
         //Método Top = mostra o nó do topo
 
         //Fechar input do bt adicionar
-        this.closeAddInput();
+        let inputDiv = document.getElementsByClassName("inputAdd")[0];
+        inputDiv.style.display = "none";
+        
         //Criar elemento parágrafo para o nó
         let nodeFront = document.createElement("p"); 
         nodeFront.setAttribute("class", "nodeContent");
         //Adicionar valor
-        nodeFront.innerText = this.enterNode.data;
+        nodeFront.innerText = this.enterNode;
         stackDisplay.appendChild(nodeFront);
 
         return this.enterNode;
